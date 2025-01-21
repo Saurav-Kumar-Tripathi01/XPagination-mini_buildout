@@ -67,10 +67,8 @@ const Xpagination = () => {
             <div style={styles.pagination}>
                 <button
                     onClick={handlePreviousPage}
-                    disabled={currentPage === 1}
                     style={{
                         ...styles.button,
-                        backgroundColor: currentPage === 1 ? '#cccccc' : '#008C72',
                         cursor: currentPage === 1 ? 'not-allowed' : 'pointer',
                     }}
                     aria-label="Previous page"
@@ -82,10 +80,8 @@ const Xpagination = () => {
                 </span>
                 <button
                     onClick={handleNextPage}
-                    disabled={currentPage === Math.ceil(employees.length / itemsPerPage)}
                     style={{
                         ...styles.button,
-                        backgroundColor: currentPage === Math.ceil(employees.length / itemsPerPage) ? '#cccccc' : '#008C72',
                         cursor: currentPage === Math.ceil(employees.length / itemsPerPage) ? 'not-allowed' : 'pointer',
                     }}
                     aria-label="Next page"
@@ -155,6 +151,7 @@ const styles = {
         color: 'white',
         borderRadius: '4px',
         transition: 'background-color 0.3s',
+        backgroundColor: '#008C72',
     },
     pageIndicator: {
         padding: '10px 20px',
